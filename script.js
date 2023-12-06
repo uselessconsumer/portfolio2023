@@ -1,0 +1,1 @@
+const intChar = document.querySelectorAll('.interactiveChar');
