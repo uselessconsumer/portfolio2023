@@ -6,22 +6,6 @@
 //don't change the same character twice in a row
 //continue the loop until a character is hovered
 
-
-const intChar = document.querySelectorAll('.interactiveChar');
-
-let charTimer;
-
-//executes if a character hasn't been hovered in 10 seconds
-function timeDelay() {
-    console.log("time triggered");
-
-}
-
-//create an array of the interactive characters
-intChar.forEach((span) => {
-
-});
-
 //fontlist for interactive title
 let fonts = [
     {
@@ -72,17 +56,43 @@ let fonts = [
 ]
 
 
-//when the mouse hovers over a new character
+const intChar = document.querySelectorAll('.interactiveChar');
+
+
+
+
+
+let arrChars = [];
+
 intChar.forEach((span) => {
     
-    span.addEventListener('mouseover', () => {
+    arrChars.push(span);
 
+    //when the mouse hovers over a new character
+    span.addEventListener('mouseover', () => {
         clearTimeout(charTimer);
         charTimer = setTimeout(timeDelay, 2000);
 
         //generates a random number in the font array to change the character that is hovered
-        let randNum = Math.floor(Math.random() * fonts.length);
-        span.style.fontFamily = fonts[randNum].fontFamily;
+        function changeFont() {
+            let randNumFonts = Math.floor(Math.random() * fonts.length);
+            span.style.fontFamily = fonts[randNumFonts].fontFamily;
+        };
+        changeFont();
 
     });
 });
+
+
+let charTimer;
+
+//executes if a character hasn't been hovered in 10 seconds
+function timeDelay() {
+    let randomChar = Math.floor(Math.random() * arrChars.length);
+    console.log(randomChar);
+
+    changeFont();
+
+
+
+}
