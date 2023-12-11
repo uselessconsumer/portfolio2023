@@ -1,4 +1,10 @@
 //maybe change the if else font hovering into an object?
+//a char is hovered
+//a timer is started
+//if another character isn't hovered within 10 seconds
+//change a random character
+//don't change the same character twice in a row
+//continue the loop until a character is hovered
 
 
 const intChar = document.querySelectorAll('.interactiveChar');
@@ -8,8 +14,13 @@ let charTimer;
 //executes if a character hasn't been hovered in 10 seconds
 function timeDelay() {
     console.log("time triggered");
+
 }
 
+//create an array of the interactive characters
+intChar.forEach((span) => {
+
+});
 
 //fontlist for interactive title
 let fonts = [
@@ -60,9 +71,6 @@ let fonts = [
     },
 ]
 
-console.log(fonts[2].fontFamily);
-
-console.log(fonts);
 
 //when the mouse hovers over a new character
 intChar.forEach((span) => {
@@ -78,12 +86,3 @@ intChar.forEach((span) => {
 
     });
 });
-
-
-//a char is hovered
-//a timer is started
-//if another character isn't hovered within 10 seconds
-//change a random character
-//don't change the same character twice in a row
-//continue the loop until a character is hovered
-
