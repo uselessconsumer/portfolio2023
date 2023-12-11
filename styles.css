@@ -5,7 +5,10 @@ body {
 .interactiveChar {
     font-size: 100pt;
     text-align: left;
+}
 
+.interactiveType {
+    line-height: .8;
 }
 
 .interactiveType:hover {
