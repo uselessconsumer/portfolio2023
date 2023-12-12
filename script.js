@@ -59,9 +59,6 @@ let fonts = [
 const intChar = document.querySelectorAll('.interactiveChar');
 
 
-
-
-
 let arrChars = [];
 
 intChar.forEach((span) => {
@@ -73,12 +70,9 @@ intChar.forEach((span) => {
         clearTimeout(charTimer);
         charTimer = setTimeout(timeDelay, 2000);
 
-        //generates a random number in the font array to change the character that is hovered
-        function changeFont() {
-            let randNumFonts = Math.floor(Math.random() * fonts.length);
-            span.style.fontFamily = fonts[randNumFonts].fontFamily;
-        };
-        changeFont();
+         //generates a random number in the font array to change the character that is hovered
+        let randNumFonts = Math.floor(Math.random() * fonts.length);
+        span.style.fontFamily = fonts[randNumFonts].fontFamily;
 
     });
 });
@@ -91,8 +85,7 @@ function timeDelay() {
     let randomChar = Math.floor(Math.random() * arrChars.length);
     console.log(randomChar);
 
-    changeFont();
-
-
+    let selectChar = arrChars[randomChar];
+    selectChar.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)].fontFamily;
 
 }
